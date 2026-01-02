@@ -11,16 +11,20 @@ const remove = (el) => {
   }, time * 900);
 };
 
-const emojis = ['♥️', '🌲', '🐍', '🪙'];
+const emojis = ['♥️', '🌲', '🐍', '🪙', '🦄', '🐢'];
 
 button.addEventListener('click', () => {
   const div = document.createElement('div');
   div.className = 'breadcrumb';
-  div.style.backgroundColor = `hsl(${Math.floor(
-    Math.random() * 255
-  )}, 100%, 91%)`;
+
+  let color = Math.floor(Math.random() * 255);
+  div.style.backgroundColor = `hsl(${color}, 100%, 91%)`;
+  div.style.color = `hsl(${color}, 100%, 20%)`;
+
   div.append(
-    (document.createElement('p').innerHTML = `🪙 Obavestenje ${counter++}`)
+    (document.createElement('p').innerHTML = `${
+      emojis[Math.floor(Math.random() * emojis.length)]
+    } Notification ${counter++}`)
   );
 
   div.style.animation = `gone ${time}s`;
