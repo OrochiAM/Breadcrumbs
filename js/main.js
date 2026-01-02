@@ -11,6 +11,8 @@ const remove = (el) => {
   }, time * 900);
 };
 
+const emojis = ['♥️', '🌲', '🐍', '🪙'];
+
 button.addEventListener('click', () => {
   const div = document.createElement('div');
   div.className = 'breadcrumb';
